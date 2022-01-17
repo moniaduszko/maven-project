@@ -15,7 +15,7 @@ public class Greeter {
 
   }
 
- //**
+ /**
   * @param someone the name of a person
   * @return greeting string
   */
