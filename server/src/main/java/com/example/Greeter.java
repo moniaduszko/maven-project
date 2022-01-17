@@ -1,5 +1,8 @@
 /**
  * Info about this package doing something for package-info.java file.
+ * @since 1.0
+ * @author mduszko
+ * @version 1.1
  */
 package com.example;
 
