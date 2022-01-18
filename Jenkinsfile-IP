@@ -4,9 +4,9 @@ pipeline {
   
   
   parameters {
-    string(name: 'TOMCAT_DEV_IP', defaultValue:'http://localhost:8090',
+    string(name: 'TOMCAT_DEV_IP', defaultValue:'http://localhost:8090/',
     description:'Starting Server : 8080')
-    string(name: 'TOMCAT_PROD_IP', defaultValue:'http://localhost9090',
+    string(name: 'TOMCAT_PROD_IP', defaultValue:'http://localhost:9090/',
     description:'Production Server : 9090')
   }
 
