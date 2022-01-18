@@ -2,10 +2,6 @@ pipeline {
   
   agent any
   
-  tools {
-    localMaven 'MAVEN_HOME' 
-    localJDK 'JAVA_HOME' 
-  }
   
   parameters {
     string(name: 'TOMCAT_DEV_IP', defaultValue:'http://localhost:8090',
@@ -21,7 +17,7 @@ pipeline {
   stages {
     stage('Build') {
       steps{
-      sh 'mvn clean package'
+      sh 'mvn -B -DskipTests clean package'
       }
       post {
         success {
