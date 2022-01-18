@@ -30,13 +30,15 @@ pipeline {
       parallel {
         stage ('Deploy to Staging') {
           steps {
-          deploy adapters: [tomcat9(credentialsId: '073c76ee-59d5-43a1-a03c-aa3c2d046d45', path: '', url: '')], contextPath: null, war: '**/*.war'
+          deploy adapters: [tomcat9(credentialsId: '073c76ee-59d5-43a1-a03c-aa3c2d046d45', path: '', url: "${params.TOMCAT_DEV_IP}")], contextPath: null,
+          onFailure: false, war: '**/*.war'
           }
         }
 
         stage ('Deploy to Production') {
         steps {
-        deploy adapters: [tomcat9(credentialsId: '073c76ee-59d5-43a1-a03c-aa3c2d046d45', path: '', url: '')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '073c76ee-59d5-43a1-a03c-aa3c2d046d45', path: '', url: "${params.TOMCAT_PROD_IP}")], contextPath: null,
+        onFailure: false, war: '**/*.war'
           }
         }
         
